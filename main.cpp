@@ -145,7 +145,8 @@ int main()
     
     CompareStruct f;                                            //7
     auto* smaller = f.compare(&t1 ,&t2 );                              //8
-    if(smaller != nullptr){
+    if(smaller != nullptr)
+    {
         std::cout << "the smaller one is << " << smaller->name << std::endl; //9
     }
 
