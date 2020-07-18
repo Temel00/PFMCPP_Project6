@@ -68,8 +68,11 @@ struct CompareStruct                                //4
 {
     T* compare(T* a, T* b) //5
     {
-        if( a->value < b->value ) return a;
-        if( a->value > b->value ) return b;
+        if(a != nullptr && b != nullptr)
+        {
+            if( a->value < b->value ) return a;
+            if( a->value > b->value ) return b;
+        }
         return nullptr;
     }
 };
@@ -143,7 +146,7 @@ int main()
     CompareStruct f;                                            //7
     auto* smaller = f.compare(&t1 ,&t2 );                              //8
     if(smaller != nullptr){
-    std::cout << "the smaller one is << " << smaller->name << std::endl; //9
+        std::cout << "the smaller one is << " << smaller->name << std::endl; //9
     }
 
     U u3;
